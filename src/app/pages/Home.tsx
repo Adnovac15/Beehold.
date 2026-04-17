@@ -2,6 +2,12 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Link } from "react-router";
 import { Play, Award, Users, Zap } from "lucide-react";
 
+import voxPopVideo from "../../imports/LaunchDay1_FinalV2.mp4";
+import flashDeliveryVideo from "../../imports/Flashmas_Day_1.mp4";
+import voxPopLogoVideo from "../../imports/Voxpop_logo_animation.mp4";
+import premierVideo from "../../imports/Spicy_Wings.mp4";
+import poundlandSunflowerVideo from "../../imports/Adam_Higginson_AV1410_Sunflower_Desk.mp4";
+
 export default function Home() {
   return (
     <div className="pt-[72px]">
@@ -364,31 +370,31 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
           <FeaturedWorkCard
-            image="https://images.unsplash.com/photo-1621744965770-ad507bed097c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3Rpb24lMjBncmFwaGljcyUyMGFuaW1hdGlvbiUyMHN0dWRpb3xlbnwxfHx8fDE3NzMyNDIwNzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            video={voxPopVideo}
             category="Brand Launch"
-            title="TechFlow Rebrand"
+            title="VoxPop"
             large
           />
           <FeaturedWorkCard
-            image="https://images.unsplash.com/photo-1579109652910-99b9be06aaec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMHByb2R1Y3Rpb24lMjBlZGl0aW5nJTIwd29ya3NwYWNlfGVufDF8fHx8MTc3MzMyMTQ0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            category="Explainer"
-            title="Product Demo Series"
+            video={flashDeliveryVideo}
+            category="Advertising"
+            title="Flash Delivery"
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           <SmallWorkCard
-            image="https://images.unsplash.com/photo-1730206562928-0efd62560435?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHN0dWRpbyUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzMyMzAzMzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            title="Social Campaign"
+            video={voxPopLogoVideo}
+            title="VoxPop Logo Animation"
           />
           <SmallWorkCard
-            image="https://images.unsplash.com/photo-1688012578253-6250872eeb2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMHNoYXBlcyUyMGFuaW1hdGlvbnxlbnwxfHx8fDE3NzMzMjE0NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            title="Event Opener"
+            video={premierVideo}
+            title="Premier"
             accent="brick"
           />
           <SmallWorkCard
-            image="https://images.unsplash.com/photo-1621744965770-ad507bed097c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3Rpb24lMjBncmFwaGljcyUyMGFuaW1hdGlvbiUyMHN0dWRpb3xlbnwxfHx8fDE3NzMyNDIwNzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            title="Lower Thirds"
+            video={poundlandSunflowerVideo}
+            title="Poundland Sunflower"
             accent="canal"
           />
         </div>
@@ -560,14 +566,16 @@ function ServiceCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-function FeaturedWorkCard({ image, category, title, large = false }: { image: string; category: string; title: string; large?: boolean }) {
+function FeaturedWorkCard({ video, category, title, large = false }: { video: string; category: string; title: string; large?: boolean }) {
   return (
     <div className={`bg-[var(--soot)] border border-[rgba(255,255,255,0.06)] rounded overflow-hidden group cursor-pointer hover:border-[rgba(245,197,0,0.3)] transition-all duration-300 ${large ? 'row-span-2' : ''}`}>
-      <div className={`relative overflow-hidden ${large ? 'h-96' : 'h-64'}`}>
-        <ImageWithFallback
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      <div className="relative overflow-hidden">
+        <video
+          src={video}
+          className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+          muted
+          loop
+          autoPlay
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-transparent to-transparent opacity-60" />
         <div className="absolute top-4 left-4">
@@ -603,7 +611,7 @@ function FeaturedWorkCard({ image, category, title, large = false }: { image: st
   );
 }
 
-function SmallWorkCard({ image, title, accent = 'bee' }: { image: string; title: string; accent?: 'bee' | 'brick' | 'canal' }) {
+function SmallWorkCard({ video, title, accent = 'bee' }: { video: string; title: string; accent?: 'bee' | 'brick' | 'canal' }) {
   const accentColors = {
     bee: 'var(--bee)',
     brick: 'var(--brick)',
@@ -613,11 +621,13 @@ function SmallWorkCard({ image, title, accent = 'bee' }: { image: string; title:
   return (
     <div className="bg-[var(--soot)] border border-[rgba(255,255,255,0.06)] rounded overflow-hidden group cursor-pointer hover:border-[rgba(245,197,0,0.3)] transition-all duration-300 relative">
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: accentColors[accent] }} />
-      <div className="relative h-44 overflow-hidden">
-        <ImageWithFallback
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      <div className="relative overflow-hidden">
+        <video
+          src={video}
+          className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+          muted
+          loop
+          autoPlay
         />
       </div>
       <div className="p-5">

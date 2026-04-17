@@ -82,14 +82,14 @@ export default function Contact() {
                 <ContactInfo
                   icon={<Mail className="w-5 h-5" />}
                   label="Email"
-                  value="hello@beehold.studio"
-                  link="mailto:hello@beehold.studio"
+                  value="contact@beehold.co.uk"
+                  link="mailto:contact@beehold.co.uk"
                 />
                 <ContactInfo
                   icon={<Phone className="w-5 h-5" />}
                   label="Phone"
-                  value="+44 161 123 4567"
-                  link="tel:+441611234567"
+                  value="+44 7443 629456"
+                  link="tel:+447443629456"
                 />
                 <ContactInfo
                   icon={<MapPin className="w-5 h-5" />}
@@ -249,7 +249,7 @@ export default function Contact() {
             Drop Us a Line Directly
           </h2>
           <a
-            href="mailto:hello@beehold.studio"
+            href="mailto:contact@beehold.co.uk"
             className="inline-block transition-colors duration-200"
             style={{
               fontFamily: 'var(--font-display)',
@@ -260,7 +260,7 @@ export default function Contact() {
               color: 'var(--bee)'
             }}
           >
-            hello@beehold.studio
+            contact@beehold.co.uk
           </a>
         </div>
       </section>

@@ -1,78 +1,70 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
 
+import flashDeliveryVideo from "../../imports/Flashmas_Day_1.mp4";
+import premierVideo from "../../imports/Spicy_Wings.mp4";
+import voxPopVideo from "../../imports/LaunchDay1_FinalV2.mp4";
+import voxPopSkyVideo from "../../imports/VoxPop_Sky.mp4";
+import voxPopLogoVideo from "../../imports/Voxpop_logo_animation.mp4";
+import poundlandSunflowerVideo from "../../imports/Adam_Higginson_AV1410_Sunflower_Desk.mp4";
+import poundlandCreativeVideo from "../../imports/Adam_Higginson_AV1410_Creative_Desk.mp4";
+
 const projects = [
   {
-    id: 1,
-    title: "TechFlow Rebrand",
+    id: 12,
+    title: "VoxPop",
     category: "Brand Launch",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1621744965770-ad507bed097c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3Rpb24lMjBncmFwaGljcyUyMGFuaW1hdGlvbiUyMHN0dWRpb3xlbnwxfHx8fDE3NzMyNDIwNzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    video: voxPopVideo,
     featured: true
   },
   {
-    id: 2,
-    title: "Product Demo Series",
-    category: "Explainer",
-    year: "2026",
-    image: "https://images.unsplash.com/photo-1579109652910-99b9be06aaec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMHByb2R1Y3Rpb24lMjBlZGl0aW5nJTIwd29ya3NwYWNlfGVufDF8fHx8MTc3MzMyMTQ0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Corporate Vision Video",
-    category: "Corporate",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1761044590940-9e3205a60b92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBicmFuZCUyMHZpZGVvJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NzMzMjE1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Animated Explainer",
-    category: "Explainer",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1558522191-55f74eface28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmltYXRlZCUyMGV4cGxhaW5lciUyMHZpZGVvJTIwd29ya3NwYWNlfGVufDF8fHx8MTc3MzMyMTU0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Social Campaign",
-    category: "Social Media",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1726066012749-f81bf4422d4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBtZWRpYSUyMGNvbnRlbnQlMjBjcmVhdGlvbnxlbnwxfHx8fDE3NzMyNTk4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Event Opener Package",
+    id: 13,
+    title: "VoxPop Logo Animation",
     category: "Event Graphics",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1712903276903-8122212c35fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMHByZXNlbnRhdGlvbiUyMGdyYXBoaWNzfGVufDF8fHx8MTc3MzMyMTU0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
+    year: "2026",
+    video: voxPopSkyVideo,
+    featured: true
   },
   {
-    id: 7,
-    title: "Broadcast Graphics Suite",
-    category: "Broadcast",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1750657594788-3faf7c91a842?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWxldmlzaW9uJTIwYnJvYWRjYXN0JTIwZ3JhcGhpY3N8ZW58MXx8fHwxNzczMzIxNTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
+    id: 14,
+    title: "VoxPop Logo Animation",
+    category: "Event Graphics",
+    year: "2026",
+    video: voxPopLogoVideo,
+    featured: true
   },
   {
-    id: 8,
-    title: "Ad Campaign Visuals",
+    id: 10,
+    title: "Flash Delivery",
     category: "Advertising",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1770825874964-108c4f0cad4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZHZlcnRpc2luZyUyMGNhbXBhaWduJTIwY3JlYXRpdmV8ZW58MXx8fHwxNzczMzE0NjUxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
+    year: "2026",
+    video: flashDeliveryVideo,
+    featured: true
   },
   {
-    id: 9,
-    title: "Studio Showreel",
-    category: "Showreel",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1730206562928-0efd62560435?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHN0dWRpbyUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzMyMzAzMzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    featured: false
+    id: 11,
+    title: "Premier",
+    category: "Advertising",
+    year: "2026",
+    video: premierVideo,
+    featured: true
+  },
+  {
+    id: 15,
+    title: "Poundland Sunflower",
+    category: "Advertising",
+    year: "2026",
+    video: poundlandSunflowerVideo,
+    featured: true
+  },
+  {
+    id: 16,
+    title: "Poundland Creative",
+    category: "Advertising",
+    year: "2026",
+    video: poundlandCreativeVideo,
+    featured: true
   }
 ];
 
@@ -258,17 +250,45 @@ export default function Work() {
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
     <div className="bg-[var(--soot)] border border-[rgba(255,255,255,0.06)] rounded overflow-hidden group cursor-pointer hover:border-[rgba(245,197,0,0.3)] transition-all duration-300">
-      <div className="relative h-64 overflow-hidden">
-        <ImageWithFallback
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-transparent to-transparent opacity-70" />
+      <div className={`relative overflow-hidden ${project.video ? 'h-auto' : 'h-64'}`}>
+        {project.video ? (
+          <>
+            <video
+              src={project.video}
+              className="w-full h-auto"
+              controls
+              playsInline
+              preload="metadata"
+            />
+          </>
+        ) : (
+          <>
+            <ImageWithFallback
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-transparent to-transparent opacity-70 pointer-events-none" />
+            
+            <div className="absolute bottom-4 right-4 pointer-events-none">
+              <div 
+                className="w-10 h-10 rounded-full bg-[rgba(245,197,0,0.9)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  color: 'var(--ink)'
+                }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+          </>
+        )}
         
         {project.featured && (
           <div 
-            className="absolute top-4 left-4 px-3 py-1.5 bg-[var(--bee)] rounded-sm"
+            className="absolute top-4 left-4 px-3 py-1.5 bg-[var(--bee)] rounded-sm z-10"
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '8px',
@@ -280,20 +300,6 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             Featured
           </div>
         )}
-        
-        <div className="absolute bottom-4 right-4">
-          <div 
-            className="w-10 h-10 rounded-full bg-[rgba(245,197,0,0.9)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{
-              color: 'var(--ink)'
-            }}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-        </div>
       </div>
       
       <div className="p-6">

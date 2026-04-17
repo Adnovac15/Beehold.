@@ -84,13 +84,13 @@ export default function Footer() {
             <FooterTitle>Get In Touch</FooterTitle>
             <div className="space-y-3">
               <FooterText>
-                <a href="mailto:hello@beehold.studio" className="hover:text-[var(--bee)] transition-colors duration-200">
-                  hello@beehold.studio
+                <a href="mailto:contact@beehold.co.uk" className="hover:text-[var(--bee)] transition-colors duration-200">
+                  contact@beehold.co.uk
                 </a>
               </FooterText>
               <FooterText>
-                <a href="tel:+441611234567" className="hover:text-[var(--bee)] transition-colors duration-200">
-                  +44 161 123 4567
+                <a href="tel:+447443629456" className="hover:text-[var(--bee)] transition-colors duration-200">
+                  +44 7443 629456
                 </a>
               </FooterText>
               <FooterText>
