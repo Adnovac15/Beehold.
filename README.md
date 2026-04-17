@@ -1,5 +1,5 @@
 
-  # BeeHold Website Design
+  # BeeHold
 
   This is a code bundle for BeeHold Website Design. The original project is available at https://www.figma.com/design/QX67L0MnkVKwXo9zbCszFf/BeeHold-Website-Design.
 
